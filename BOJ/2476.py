@@ -24,4 +24,4 @@ for i in range(N):
     
     max_list.append(money)
 
-print(max(max_list))
+print(max(max_list)) 
