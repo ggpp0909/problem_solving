@@ -22,4 +22,3 @@ for i in range(n):
     a = int(input())
     fibo(a)
     print(call0,call1)
-# hi
