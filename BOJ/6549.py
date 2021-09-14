@@ -1,0 +1,33 @@
+import sys
+
+while True:
+    n = list(map(int, sys.stdin.readline().split()))
+    if n[0] == 0:
+        break
+
+    arr = [-1] + n[1:]
+
+    l_width = [0 for i in range(n[0] + 1)]
+    r_width = [0 for i in range(n[0] + 1)]
+
+    stack = []
+    stack.append(0)
+    for i in range(1, n[0] + 1):
+        while arr[i] <= arr[stack[-1]]:
+            stack.pop()
+        l_width[i] = stack[-1]
+        stack.append(i)
+
+    arr2 = [-1] + arr[::-1]
+    stack = []
+    stack.append(0)
+    for i in range(1, n[0] + 1):
+        while arr2[i] <= arr2[stack[-1]]:
+            stack.pop()
+        r_width[i] = stack[-1]
+        stack.append(i)
+
+    ans = 0
+    for i in range(1, n[0] + 1):
+        ans = max(ans, arr[i] *(n[0] - r_width[n[0] - i + 1] - l_width[i]))
+    print(ans)
