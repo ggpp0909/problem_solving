@@ -3,7 +3,7 @@ def solution(files):
 
     for i in files:
         original = i
-        i = i.upper() + '#'   #
+        i = i.upper() + '#'
         # print(i)
 
         flag = 0
