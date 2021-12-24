@@ -1,5 +1,4 @@
 import sys
-
 M = int(sys.stdin.readline().rstrip())
 
 S = 0
