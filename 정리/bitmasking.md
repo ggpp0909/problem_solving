@@ -3,7 +3,10 @@
 ### why bitmask?
 
 - **빠른 속도**
+
 - **적은 메모리**
+
+  
 
 
 
@@ -73,7 +76,7 @@ def recur(cur, tot):
         if visited[i]:
             continue
         visited[i] = True
-        recur(cur + 1, tot + arr[i][cur])
+        recur(cur + 1, tot + arr[cur][i])
         visited[i] = False
 
 recur(0, 0)
@@ -102,7 +105,7 @@ def recur(cur, tot, visit):
             continue
         # visited[i] = True
         visit |= bit
-        recur(cur + 1, tot + arr[i][cur], visit)
+        recur(cur + 1, tot + arr[cur][i], visit)
         # visited[i] = False
         visit &= ~(1 << bit)
 
@@ -124,7 +127,7 @@ arr = [list(map(int, input().split())) for i in range(N)]
 dp = [[9999999 for i in range(1 << N)] for j in range(30)]
 
 
-def recur(cur, visit):
+def recur(cur, visit):	# cur을 사람
 
     # if cur == N:
     if visit == (1 << N) - 1: # 모든노드를 방문했다면
@@ -133,7 +136,7 @@ def recur(cur, visit):
     if dp[cur][visit] != 9999999:  # 메모이제이션 해놓은 값이 있다면?
         return dp[cur][visit]
 
-    for i in range(N):  # 처음 저장하는 경우라면 모든 노드를 순회
+    for i in range(N):  # 처음 저장하는 경우라면 모든 노드를 순회, i는 일의 번호
         bit = 1 << i
         if visit & bit:  # 이미 방문한 노드라면 skip
             continue
@@ -158,7 +161,7 @@ dp[1][10110] 은 현재위치가 1번노드이며, 4, 2, 1번노드를 방문한
 -> 1, 2, 4번노드를 방문했을때의 최소비용이 아니라, 남은 노드인 3번노드를 방문할 때의 최소비용.
 
 다른 예. 1, 2, 3, 4, 5, 6번 노드가 있다고 치자
-dp[3][001010] 은 현재위치가 3번노드, 1, 3번노드를 방문한상태,
+dp[3][0001010] 은 현재위치가 3번노드, 1, 3번노드를 방문한상태,
 저장되는 값은 1, 3번노드를 방문했을때의 최소비용이 아니라, 남은노드인, 2, 4, 5, 6번 노드를 방문할 때의 최소비용.
 
 fibo(6)이 8인것은 죽었다 깨어나도 불변하는 사실이므로 새로 구하지 않고 메모이제이션 하듯이
@@ -187,12 +190,12 @@ dp[cur][visit] = min(dp[cur][visit], recur(cur + 1, visit | bit) + arr[cur][i])
 점화식에서 0 이 리턴되었다면
 dp[cur][visit] = min(dp[cur][visit], arr[cur][i])
 이렇게 바뀜.
--> cur에서 남은 노드가 i밖에 없으면 cur에서 i로 가는 비용이 최소비용이 되니까 
+-> cur에서 남은 노드가 i밖에 없으면 cur에서 i로 가는 비용이 최소비용이 되니까
 ```
 
 
 
-### BOJ 2098 외판원 순회, 1311 할일정하기 코드 비교
+### BOJ 2098 외판원 순회 2, 1311 할일정하기 코드 비교
 
 ```python
 # 2098 외판원 순회 1
@@ -264,3 +267,10 @@ print(recur(0, 0))
   - DP, 메모이제이션
   - visit을 비트필드로 대체하고 인덱스로 사용
   - 같은 점화식
+
+
+
+
+
+
+
