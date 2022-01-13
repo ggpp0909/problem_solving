@@ -17,8 +17,6 @@
 
 T = int(input())
 for _ in range(T):
-    # N의 약수쌍 구하기 (a, b)
-    # a + b가 3의 배수면 OK
     N = int(input())
 
     if (N % 3) == 2:
