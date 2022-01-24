@@ -63,17 +63,18 @@ def solution(expression):
         else:
             temp += i
     sep.append(temp)
-
+    # print(sep)
     ans = 0
     for i in range(6):
         temp = sep[:] # 뒤에서부터 연산할거야
         temp.reverse()
         for j in mark[i]: # 연산자 우선순위 순회
 
-            for k in range(len(temp) -2, 0, -2): # 연산자는 1번인덱스부터 2칸간격으로 있음 끝에서부터 pop하면서 업데이트
+            for k in range(len(temp) - 2, 0, -2): # 연산자는 1번인덱스부터 2칸간격으로 있음 끝에서부터 pop하면서 업데이트
                 if temp[k] == j: # 연산자를 만난다면 앞뒤를 연산
                     temp[k - 1] = calc(temp[k + 1], temp[k - 1], j)
                     del temp[k:k+2]
+
         ans = max(ans, abs(int(temp[0])))
             # print(temp)
     # print(ans)

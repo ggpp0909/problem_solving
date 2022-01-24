@@ -42,7 +42,7 @@ def solution(rows, columns, queries):
         #  카피하는 과정에서 시간초과 -> 직접 회전 -> 하나를 기준으로 잡고 한방향으로 돌면서 전에 숫자를 땡겨오는 식
         start = arr[x1 - 1][y2 - 1] # 하나씩 덮어쓰면서 회전시키다 보면 마지막에 하나가 사라짐 -> 따로저장
         # 윗줄
-        min_val = 9999999
+        min_val = int(start)
         for i in range(y2 - 1, y1 - 1, -1):
             min_val = min(min_val, arr[x1 - 1][i])
             # temp = arr[x1 - 1][i]
