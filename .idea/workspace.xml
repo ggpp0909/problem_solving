@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23fbab17-2c4c-4a03-b039-3bc1e8cbd8d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/BOJ/16946.py" beforeDir="false" afterPath="$PROJECT_DIR$/BOJ/16946.py" afterDir="false" />
-    </list>
+    <list default="true" id="23fbab17-2c4c-4a03-b039-3bc1e8cbd8d9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,24 +20,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="3" />
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="2632" />
+          <entry key="py" value="3242" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="2632" />
+          <entry key="Python" value="3242" />
         </counts>
       </usages-collector>
     </session>
@@ -59,15 +57,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BOJ/16946.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+            <state relative-caret-position="209">
+              <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <marker date="1645987476353" expanded="true" signature="251:512" ph="..." />
                 <marker date="1645987476353" expanded="true" signature="1386:1808" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BOJ/11404.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+                <marker date="1645989663616" expanded="true" signature="349:725" ph="..." />
               </folding>
             </state>
           </provider>
@@ -92,6 +103,7 @@
         <option value="$PROJECT_DIR$/BOJ/1002.py" />
         <option value="$PROJECT_DIR$/BOJ/1976.py" />
         <option value="$PROJECT_DIR$/BOJ/16946.py" />
+        <option value="$PROJECT_DIR$/BOJ/11404.py" />
       </list>
     </option>
   </component>
@@ -154,7 +166,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.16946">
+  <component name="RunManager" selected="Python.11404">
+    <configuration name="11404" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="problem_solving" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BOJ" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BOJ/11404.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="14244" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="problem_solving" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -222,9 +255,11 @@
       <item itemvalue="Python.14244" />
       <item itemvalue="Python.1976" />
       <item itemvalue="Python.16946" />
+      <item itemvalue="Python.11404" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.11404" />
         <item itemvalue="Python.16946" />
         <item itemvalue="Python.1976" />
         <item itemvalue="Python.14244" />
@@ -309,12 +344,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BOJ/16946.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+        <state relative-caret-position="209">
+          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <marker date="1645987476353" expanded="true" signature="251:512" ph="..." />
             <marker date="1645987476353" expanded="true" signature="1386:1808" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOJ/11404.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+            <marker date="1645989663616" expanded="true" signature="349:725" ph="..." />
           </folding>
         </state>
       </provider>
