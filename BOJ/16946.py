@@ -72,7 +72,7 @@ def bfs(i, j, num):
                 que.append([nx, ny])
 
 
-visited = [[False for i in range(M)] for j in range(M)]
+visited = [[False for i in range(M)] for j in range(N)]
 
 for i in range(N):
     for j in range(M):
