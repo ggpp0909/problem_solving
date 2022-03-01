@@ -57,7 +57,12 @@ for k in range(n): # 경유지
             dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j])
 
 for i in range(n):
-    dp[i][i] = 0
+    for j in range(n):
+        if i == j:
+            dp[i][j] = 0
+        else:
+            if dp[i][j] == INF:
+                dp[i][j] = 0
 
 for i in dp:
     print(*i)
