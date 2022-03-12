@@ -20,6 +20,8 @@ def union(x, y):
     y = find(y)
     par[x] = y
 
+
+
 arr.sort(key=lambda x:x[2])
 ans = 0
 # print(arr)
