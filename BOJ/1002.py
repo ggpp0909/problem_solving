@@ -17,3 +17,4 @@ for k in range(n):
         print(0)
     else:
         print(2)
+        
