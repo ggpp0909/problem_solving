@@ -10,7 +10,9 @@ for i in arr:
     v[i[1]].append(i[0])
 
 ans = 0
-def recur(cur = 1):
+
+
+def recur(cur=1):
     global ans
 
     for i in v[cur]:
@@ -19,6 +21,7 @@ def recur(cur = 1):
         visited[i] = True
         ans += 1
         recur(i)
+
 
 visited[1] = True
 recur()
