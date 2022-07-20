@@ -94,7 +94,7 @@
 #     state = False
 #     visited = [False for i in range(N + 1)]
 #     find_rotate(i, i, 0)
-#     if state == True:
+#     if state:
 #         is_rotate[i] = True
 
 # # print(is_rotate)
@@ -108,6 +108,7 @@
 ######### 2트로 풀었지만 UF로 3트 ######
 
 import sys
+sys.setrecursionlimit(10 ** 6)
 
 N = int(input())
 temp = [list(map(int, input().split())) for i in range(N)]
@@ -121,7 +122,12 @@ for i in temp:
     v[i[0]].append(i[1])
     v[i[1]].append(i[0])
 
+# 1 노드를 연결하다가 이미 연결된 노드를 만난다면 -> 그 두 노드는 무조건 싸이클에 포함되는 노드
+# 2 두 노드중 하나에서 다른한쪽노드 만날때까지 dfs를 돌려 사이클 처리
+# 3 간선이 3개 이상인 노드를 찾아 dfs돌리며 1씩증가
 
+
+# 1
 def find(x):
     if par[x] == x:
         return x
@@ -135,3 +141,78 @@ def union(x, y):
     y = find(y)
 
     par[x] = y
+
+
+def find_rotate(cur, prev):
+    global s, e
+    if s:  # 싸이클 찾았으면 빠져나와 (가지치기)
+        return
+
+    for i in v[cur]:
+        if i == prev:  # 역주행 금지
+            continue
+
+        if find(i) == find(cur):  # 처음으로 연결된걸 감지하는 순간, 그 두 노드는 무조건 싸이클 노드
+            s = cur
+            e = i
+            return
+        union(cur, i)
+        find_rotate(i, cur)
+
+
+s = e = 0
+# print(v)
+# for i in range(1, N + 1): # 문제발생(사이클 아닌 두 노드가 감지되는 경우)
+#     for j in v[i]:
+#         if find(i) == find(j):
+#             s = i
+#             e = j
+#             break
+#         union(i, j)
+#     if s:  # 가지치기
+#         break
+find_rotate(1, 0)  # 처음 prev는 1을제외한 아무거나
+# print(s, e)
+
+is_rotate[s] = True
+is_rotate[e] = True
+dist[s] = 0
+dist[e] = 0
+
+
+# 2
+def dfs(cur, end, cnt):  # cnt 없으면 바로옆의 노드로 이동해서 재귀 끝나버림
+    if cur == end and cnt > 2:
+        return True
+
+    for i in v[cur]:
+        if visited[i]:
+            continue
+        visited[i] = True
+        if dfs(i, end, cnt + 1):  # 기저에서 True를 반환하면 쭉 True반환하면서 끝까지 빠져나와
+            is_rotate[i] = True
+            dist[i] = 0
+            return True
+        visited[i] = False
+
+
+visited = [False for i in range(N + 1)]
+visited[s] = True
+dfs(s, e, 1)
+# print(is_rotate)
+
+
+# 3
+def cal_distance(cur, cnt):
+    for i in v[cur]:
+        if dist[i] == -1:  # visited 역할과 순환선 방문 안하는것 동시처리
+            dist[i] = cnt
+            cal_distance(i, cnt + 1)
+
+
+# print(dist)
+for i in range(1, N + 1):
+    if len(v[i]) >= 3 and dist[i] == 0:  # 순환선중 간선수 셋 이상인 부분부터 dfs
+        cal_distance(i, 1)
+
+print(*dist[1:])
