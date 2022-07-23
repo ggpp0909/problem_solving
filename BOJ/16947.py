@@ -143,23 +143,6 @@ def union(x, y):
     par[x] = y
 
 
-# def find_rotate(cur, prev):
-#     global s, e
-#     if s:  # 싸이클 찾았으면 빠져나와 (가지치기)
-#         return
-
-#     for i in v[cur]:
-#         if i == prev:  # 역주행 금지
-#             continue
-
-#         if find(i) == find(cur):  # 처음으로 연결된걸 감지하는 순간, 그 두 노드는 무조건 싸이클 노드
-#             s = cur
-#             e = i
-#             return
-#         union(cur, i)
-#         find_rotate(i, cur)
-
-
 s = e = 0
 
 for i in temp:
@@ -168,21 +151,6 @@ for i in temp:
         e = i[1]
         break
     union(i[0], i[1])
-
-
-# print(v)
-# for i in range(1, N + 1): # 문제발생(사이클 아닌 두 노드가 감지되는 경우)
-#     for j in v[i]:
-#         if find(i) == find(j):
-#             s = i
-#             e = j
-#             break
-#         union(i, j)
-#     if s:  # 가지치기
-#         break
-
-# find_rotate(1, 0)  # 처음 prev는 1을제외한 아무거나
-# print(s, e)
 
 is_rotate[s] = True
 is_rotate[e] = True
