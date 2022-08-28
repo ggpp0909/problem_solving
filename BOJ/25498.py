@@ -22,7 +22,16 @@ for i in range(N - 1):
 # 1. dfs한번 돌려서 각 노드의 최대깊이 저장하면서 return
 def find_edge_count(cur, cnt):
     for i in v[cur]:
+        if visited[i]:
+            continue
+        visited[i] = True
         # 대충 짬 나중에 다시보기
         edge_count[i] = find_edge_count(i, cnt + 1)
-        return cnt
+        visited[i] = False
+    
+    return cnt
+
+visited = [False for i in range(N + 1)]
+find_edge_count(1, 1)
+print(edge_count)
 
