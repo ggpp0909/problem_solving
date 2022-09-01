@@ -11,7 +11,7 @@ input = sys.stdin.readline
 N = int(input())
 word = input()
 v = [[] for i in range(N + 1)]
-edge_count = [0 for i in range(N + 1)] # 각 노드에
+edge_count = [1 for i in range(N + 1)] # 각 노드에
 
 for i in range(N - 1):
     a, b = map(int, input().split())
@@ -26,7 +26,7 @@ def find_edge_count(cur, cnt):
             continue
         visited[i] = True
         # 대충 짬 나중에 다시보기
-        edge_count[i] = find_edge_count(i, cnt + 1)
+        edge_count[cur] = max(edge_count[cur], find_edge_count(i, cnt + 1))
         visited[i] = False
     
     return cnt
