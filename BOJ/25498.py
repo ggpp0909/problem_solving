@@ -35,6 +35,46 @@
 # find_edge_count(1, 1)
 # print(edge_count)
 
+############ 2트 #########
+# import sys
+# from collections import deque
+# input = sys.stdin.readline
+
+# n = int(input())
+# word = "#" + input()
+# v = [[] for i in range(n + 1)]
+# for i in range(n - 1):
+#     a, b = map(int, input().split())
+#     v[a].append(b)
+#     v[b].append(a)
+
+# que = deque()
+# que.append([1, 1 << 1]) # 노드 번호 , visit
+# depth = 0
+# ans = word[1]
+
+# # 하나씩 넣으면 반례 -> 같은문자일때
+# while que:
+#     cur, visit = que.popleft()
+#     temp = chr(1)
+#     for i in v[cur]:
+#         if visit & (1 << i):
+#             continue
+        
+#         # cur에서 갈 수 있는 노드중 가장 사전순으로 뒤에오는 문자 찾기
+#         if ord(temp) <= ord(word[i]):
+#             temp = word[i]
+    
+#     # 찾은 문자 노드는 전부 큐에 넣기
+#     if temp != chr(1):
+#         ans += temp
+#         for i in v[cur]:
+#             if word[i] == temp and not (visit & (1 << i)):
+#                 que.append([i, visit | (1 << i) ])
+
+# print(ans)
+
+######## 3트 #########
 
 import sys
 from collections import deque
@@ -43,34 +83,39 @@ input = sys.stdin.readline
 n = int(input())
 word = "#" + input()
 v = [[] for i in range(n + 1)]
-visited = [False for i in range(n + 1)]
 for i in range(n - 1):
     a, b = map(int, input().split())
     v[a].append(b)
     v[b].append(a)
 
-que = deque()
-que.append(1) # 노드 번호 , 깊이
+visited = [False for i in range(n + 1)]
 visited[1] = True
-depth = 0
+que = deque()
+que.append(1) # 노드 번호 , visit
 ans = word[1]
 
+# 하나씩 넣으면 반례 -> 같은문자일때
 while que:
-    cur = que.popleft()
-    temp = chr(1)
-    idx = -1
-    for i in v[cur]:
-        if visited[i]:
-            continue
-
-        if ord(temp) <= ord(word[i]):
-            temp = word[i]
-            idx = i
-
-    if idx != -1:
+    size = len(que)
+    temp = chr(96)
+    for _ in range(size):
+        cur = que.popleft()
+        for i in v[cur]:
+            if visited[i]:
+                continue
+            
+            # cur에서 갈 수 있는 노드중 가장 사전순으로 뒤에오는 문자 찾기
+            if ord(temp) <= ord(word[i]):
+                temp = word[i]
+        
+        # 찾은 문자 노드는 전부 큐에 넣기
+        if temp != chr(96):
+            for i in v[cur]:
+                if word[i] == temp and not visited[i]:
+                    que.append(i)
+                    visited[i] = True
+    if temp != chr(96):
         ans += temp
-        visited[idx] = True
-        que.append(idx)
 
 print(ans)
 
