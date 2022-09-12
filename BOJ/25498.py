@@ -103,17 +103,19 @@ while que:
         for i in v[cur]:
             if visited[i]:
                 continue
-            
+
             # cur에서 갈 수 있는 노드중 가장 사전순으로 뒤에오는 문자 찾기
             if ord(temp) <= ord(word[i]):
                 temp = word[i]
         
         # 찾은 문자 노드는 전부 큐에 넣기
+        # 여기 수정해보기
         if temp != chr(96):
             for i in v[cur]:
                 if word[i] == temp and not visited[i]:
                     que.append(i)
                     visited[i] = True
+
     if temp != chr(96):
         ans += temp
 

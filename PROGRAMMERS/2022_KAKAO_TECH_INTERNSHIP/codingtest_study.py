@@ -1,25 +1,21 @@
-# 백트랙킹?
-# def solution(alp, cop, problems):
-#     ans = 999999999
-#     def dfs(alp, cop, time, solved):
-#         nonlocal ans
-
-#         if solved == (1 << len(problems) - 1):
-#             ans = min(ans, time)
-#             return
-
-#         if time >= ans:
-#             return
-
-
-#     return answer
-
 def solution(alp, cop, problems):
-
-
-
-    return answer
-
-
-print(solution(10, 10, [[10,15,2,1,2],[20,20,3,3,4]]))
-print(solution(0, 0, [[0,0,2,1,2],[4,5,3,1,2],[4,11,4,0,2],[10,4,0,4,2]]))
+    max_alp = 0
+    max_cop = 0
+    for problem in problems:
+        max_alp = max(max_alp, problem[0])
+        max_cop = max(max_cop, problem[1])
+        
+    alp = min(max_alp, alp)
+    cop = min(max_cop, cop)
+    dp = [[99999999999 for _ in range(181)] for _ in range(181)]
+    dp[alp][cop] = 0
+    for i in range(alp, max_alp+1):
+        for j in range(cop, max_cop+1):
+            dp[i+1][j] = min(dp[i+1][j], dp[i][j]+1) # 그냥푸는거
+            dp[i][j+1] = min(dp[i][j+1], dp[i][j]+1)
+            for [alp_req, cop_req, alp_rwd, cop_rwd, cost] in problems: # 문제통해서 푸는거
+                if i >= alp_req and j >= cop_req:
+                    nxt_alp, nxt_cop = min(max_alp, i+alp_rwd), min(max_cop, j+cop_rwd) 
+                    dp[nxt_alp][nxt_cop] = min(dp[nxt_alp][nxt_cop], dp[i][j]+cost) 
+                    
+    return dp[max_alp][max_cop]
