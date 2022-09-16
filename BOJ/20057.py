@@ -118,7 +118,7 @@ while L != -1:
         wind(3, T, i)
         # temp[T][i] = cnt
         # cnt += 1
-
+    
     L -= 1
     R += 1
     T -= 1
