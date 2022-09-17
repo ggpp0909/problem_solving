@@ -19,3 +19,26 @@ for i in lst:
 ans.sort()
 for i in ans:
     print(i,end= ' ')
+
+### 220917
+
+# arr = [int(input()) for i in range(9)]
+# ans = []
+
+# def recur(cur, cnt, tot):
+#     if cnt == 7:
+#         if tot == 100:
+#             for i in sorted(ans):
+#                 print(i)
+#             exit()
+#         return
+
+#     if cur == 9:
+#         return
+    
+#     ans.append(arr[cur])
+#     recur(cur + 1, cnt + 1, tot + arr[cur])
+#     ans.pop()
+#     recur(cur + 1, cnt, tot)
+
+# recur(0, 0, 0)
