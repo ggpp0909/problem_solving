@@ -1,5 +1,6 @@
 import heapq, sys
 input = sys.stdin.readline
+
 V, E = map(int, input().split())
 v = [[] for i in range(V + 1)]
 
@@ -43,34 +44,10 @@ def dist_handler(is_mac, index, value):
     else:
         dist_star[index] = value
 
-
-# def dijkstra(node, is_mac): # 맥도날드나 스타벅스에서 다익스트라 돌리는 함수
-#     que = []
-#     heapq.heappush(que, [0, node])
-#     dist_handler(is_mac, node, 0)
-
-#     while que:
-#         d, cur = heapq.heappop(que)
-
-#         if get_limit_value(is_mac) < d or get_dist_value(is_mac, cur) < d:
-#             continue
-
-#         for i in v[cur]:
-#             nd = d + i[1]
-#             if get_dist_value(is_mac, i[0]) > nd:
-#                 dist_handler(is_mac, i[0], nd)
-#                 heapq.heappush(que, [nd, i[0]])
-
-
-# for i in range(V + 1):
-#     if mac[i]:
-#         dijkstra(i, True)
-#     elif star[i]:
-#         dijkstra(i, False)
 que = []
 for i in range(V + 1):
     if mac[i]:
-        heapq.heappush(que, [0, i, True])
+        heapq.heappush(que, [0, i, True]) 
         dist_mac[i] = 0
     elif star[i]:
         heapq.heappush(que, [0, i, False])
@@ -101,3 +78,6 @@ if ans != 9999999999:
     print(ans)
 else:
     print(-1)
+
+
+####
