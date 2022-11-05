@@ -33,6 +33,7 @@ for i in range(len(arr)):
         if arr[i] == sum_num:
             ans += 1
             break
+        
         elif arr[i] < sum_num:
             e -= 1
             if e == i:
