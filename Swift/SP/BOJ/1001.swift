@@ -1,8 +1,4 @@
-//
-//  1001.swift
-//  SP
-//
-//  Created by 장영남 on 2022/11/09.
-//
-
 import Foundation
+
+let arr = readLine()!.split(separator: " ").map {Int(String($0))!}
+print(arr[0] - arr[1])

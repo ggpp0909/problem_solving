@@ -25,6 +25,11 @@
 /* Begin PBXFileReference section */
 		B9FF4E27291B605500FECD98 /* SP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SP; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FF4E2A291B605500FECD98 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B9FF4E32291B60B900FECD98 /* 1000.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1000.swift; sourceTree = "<group>"; };
+		B9FF4E33291B60CA00FECD98 /* 1001.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1001.swift; sourceTree = "<group>"; };
+		B9FF4E34291B60EF00FECD98 /* 1647.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1647.swift; sourceTree = "<group>"; };
+		B9FF4E35291B611600FECD98 /* 20955.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 20955.swift; sourceTree = "<group>"; };
+		B9FF4E36291B614300FECD98 /* make_zero_all.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = make_zero_all.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +46,9 @@
 		B9FF4E1E291B605500FECD98 = {
 			isa = PBXGroup;
 			children = (
-				B9FF4E29291B605500FECD98 /* SP */,
+				B9FF4E2A291B605500FECD98 /* main.swift */,
+				B9FF4E31291B608100FECD98 /* PROGRAMMERS */,
+				B9FF4E29291B605500FECD98 /* BOJ */,
 				B9FF4E28291B605500FECD98 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +61,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B9FF4E29291B605500FECD98 /* SP */ = {
+		B9FF4E29291B605500FECD98 /* BOJ */ = {
 			isa = PBXGroup;
 			children = (
-				B9FF4E2A291B605500FECD98 /* main.swift */,
+				B9FF4E32291B60B900FECD98 /* 1000.swift */,
+				B9FF4E33291B60CA00FECD98 /* 1001.swift */,
+				B9FF4E34291B60EF00FECD98 /* 1647.swift */,
+				B9FF4E35291B611600FECD98 /* 20955.swift */,
 			);
-			path = SP;
+			path = BOJ;
+			sourceTree = "<group>";
+		};
+		B9FF4E31291B608100FECD98 /* PROGRAMMERS */ = {
+			isa = PBXGroup;
+			children = (
+				B9FF4E37291B614D00FECD98 /* CODING TEST PRACTICE */,
+			);
+			path = PROGRAMMERS;
+			sourceTree = "<group>";
+		};
+		B9FF4E37291B614D00FECD98 /* CODING TEST PRACTICE */ = {
+			isa = PBXGroup;
+			children = (
+				B9FF4E36291B614300FECD98 /* make_zero_all.swift */,
+			);
+			path = "CODING TEST PRACTICE";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
