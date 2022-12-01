@@ -27,7 +27,7 @@ n = int(input())
 arr = [list(map(int, input().split())) for i in range(n)]
 arr.sort(key=lambda x: -x[1])
 
-ans = 999999999
+ans = 99999999999
 
 for i in arr:
     cnt, end_day = i
