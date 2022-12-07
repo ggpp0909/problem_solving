@@ -8,47 +8,39 @@ input = sys.stdin.readline
 
 minheap = []
 maxheap = []
-in_heap = [False for i in range(100001)]
+rating = [-1 for i in range(100001)]
 
 N = int(input()) # 10만
 
 for i in range(N):
     pbnum, difficulty = map(int, input().split())
-    in_heap[pbnum] = True
+    rating[pbnum] = difficulty
     heapq.heappush(minheap, [difficulty, pbnum])
     heapq.heappush(maxheap, [-difficulty, -pbnum])
 
 M = int(input()) # 1만
 
 def add(pbnum, difficulty):
-    # 레이지, 문제를 추가할때 힙에 남아있는 같은 문제의 풀린 문제들 다 제거
-    # recommend 연산에서 heappop 연산만 하므로 각 힙큐에서 heappop해서 visited 벗어날때 까지 하면 모두 제거 됨
-    while not in_heap[-maxheap[0][1]]:
-        heapq.heappop(maxheap)
-    while not in_heap[minheap[0][1]]:
-        heapq.heappop(minheap)
-
-    in_heap[pbnum] = False
+    rating[pbnum] = difficulty
     heapq.heappush(minheap, [difficulty, pbnum])
     heapq.heappush(maxheap, [-difficulty, -pbnum])
 
 def recommend(x):
+    # 레이지, 추천하려고 하는데 꺼낸 문제의 난이도가 rating에 있는 난이도와 다르면 제거 (이미 없어진 문제라는 뜻이니까)
     if x == 1:
-        difficulty, pbnum = heapq.heappop(maxheap)
-        if in_heap[-pbnum]:
-            recommend(x)
+        while rating[-maxheap[0][1]] != -maxheap[0][0]:
+            heapq.heappop(maxheap)
         else:
-            print(-pbnum)
+            print(-maxheap[0][1])
     elif x == -1:
-        difficulty, pbnum = heapq.heappop(minheap)
-        if in_heap[pbnum]:
-            recommend(x)
+        while rating[minheap[0][1]] != minheap[0][0]:
+            heapq.heappop(minheap)
         else:
-            print(pbnum)
+            print(minheap[0][1])
 
 
 def solved(pbnum):
-    in_heap[pbnum] = False
+    rating[pbnum] = -1
 
 for i in range(M):
     temp = input().split()
