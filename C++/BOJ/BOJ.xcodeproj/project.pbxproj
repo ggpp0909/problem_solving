@@ -6,6 +6,10 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B932A29B298FB8D700D09642 /* 11726.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B932A29A298FB8D700D09642 /* 11726.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		B98D33C9297A489200AF5578 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -32,6 +36,8 @@
 		B932A2932987160F00D09642 /* 14425.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 14425.cpp; sourceTree = "<group>"; };
 		B932A2962987E05E00D09642 /* fibo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fibo.cpp; sourceTree = "<group>"; };
 		B932A2972987E4AD00D09642 /* N_LCM.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = N_LCM.cpp; sourceTree = "<group>"; };
+		B932A2982988236700D09642 /* 1004.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1004.cpp; sourceTree = "<group>"; wrapsLines = 0; };
+		B932A29A298FB8D700D09642 /* 11726.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11726.cpp; sourceTree = "<group>"; };
 		B98D33CB297A489200AF5578 /* BOJ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BOJ; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98D33CE297A489200AF5578 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B98D33D8297A492700AF5578 /* 1000.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1000.cpp; sourceTree = "<group>"; };
@@ -110,6 +116,8 @@
 				B932A28F2986548500D09642 /* 2161.cpp */,
 				B932A2912986598000D09642 /* 1012.cpp */,
 				B932A2932987160F00D09642 /* 14425.cpp */,
+				B932A2982988236700D09642 /* 1004.cpp */,
+				B932A29A298FB8D700D09642 /* 11726.cpp */,
 			);
 			path = BOJ;
 			sourceTree = "<group>";
@@ -171,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B932A29B298FB8D700D09642 /* 11726.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
