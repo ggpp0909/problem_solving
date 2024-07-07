@@ -37,6 +37,7 @@
 		B932A29D298FEDF100D09642 /* number_game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = number_game.cpp; sourceTree = "<group>"; };
 		B965D87E299E385B001B8E90 /* 3584.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 3584.cpp; sourceTree = "<group>"; wrapsLines = 1; };
 		B965D88029A0A3DF001B8E90 /* maze_exit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = maze_exit.cpp; sourceTree = "<group>"; };
+		B965D88229AF593E001B8E90 /* 14225.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 14225.cpp; sourceTree = "<group>"; };
 		B98D33CB297A489200AF5578 /* BOJ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BOJ; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98D33CE297A489200AF5578 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B98D33D8297A492700AF5578 /* 1000.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1000.cpp; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 				B932A2982988236700D09642 /* 1004.cpp */,
 				B932A29A298FB8D700D09642 /* 11726.cpp */,
 				B965D87E299E385B001B8E90 /* 3584.cpp */,
+				B965D88229AF593E001B8E90 /* 14225.cpp */,
 			);
 			path = BOJ;
 			sourceTree = "<group>";
