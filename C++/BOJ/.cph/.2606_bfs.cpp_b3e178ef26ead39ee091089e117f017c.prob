@@ -1,0 +1,1 @@
+{"name":"Local: 2606_bfs","url":"c:\\Users\\ggpp0\\Desktop\\repositories\\problem_solving\\C++\\BOJ\\2606_bfs.cpp","tests":[{"id":1743921983088,"input":"7\n6\n1 2\n2 3\n1 5\n5 2\n5 6\n4 7","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ggpp0\\Desktop\\repositories\\problem_solving\\C++\\BOJ\\2606_bfs.cpp","group":"local","local":true}
